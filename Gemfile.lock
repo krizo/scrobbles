@@ -1,0 +1,15 @@
+GIT
+  remote: git@github.com:krizo/lastfm-client.git
+  revision: 29a1d211bca6e3982cb324d85c77f5d0ec61a835
+  specs:
+    my_last_fm_client (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  my_last_fm_client!
