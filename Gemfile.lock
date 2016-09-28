@@ -1,7 +1,8 @@
-PATH
-  remote: /Users/kriz/Workspace/last_fm_client
+GIT
+  remote: git@github.com:krizo/lastfm-client.git
+  revision: 81493c84543f259eb04ec755ee9a27c3d233293e
   specs:
-    my_last_fm_client (0.0.0)
+    my_last_fm_client (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -11,7 +12,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  my_last_fm_client!
+  my_last_fm_client (= 0.0.1)!
 
 BUNDLED WITH
    1.11.2
