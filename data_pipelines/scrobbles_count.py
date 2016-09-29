@@ -6,7 +6,6 @@ import operator
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
 input_file = sys.argv[1]
 
 conf = SparkConf().setMaster("local").setAppName("Scrobbles")
