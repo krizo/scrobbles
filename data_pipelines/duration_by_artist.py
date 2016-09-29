@@ -10,7 +10,7 @@ sys.setdefaultencoding('utf-8')
 def parseLine(line):
     fields = line.split(',')
     artist = fields[4].encode('utf8')
-    duration = int(fields[7]) / 1000
+    duration = 0 if fields[7] == '' else int(fields[7]) / 1000;
     if duration == 0:
         duration = 180
     return (artist, duration)
