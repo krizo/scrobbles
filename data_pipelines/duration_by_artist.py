@@ -4,9 +4,6 @@ import io
 import sys
 import operator
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
 def parseLine(line):
     fields = line.split(',')
     artist = fields[4].encode('utf8')
