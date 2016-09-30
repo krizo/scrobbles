@@ -3,6 +3,7 @@ import collections
 import io
 import sys
 import operator
+from helpers import display_time
 
 def parseLine(line):
     fields = line.split(',')
@@ -19,10 +20,12 @@ sc = SparkContext(conf = conf)
 lines = sc.textFile(input_file)
 rdd = lines.map(parseLine)
 
-durations = rdd.reduceByKey(lambda x, y: (x + y) )
-for x in sorted(durations.collect(), key=operator.itemgetter(1)):
+durations = rdd.reduceByKey(lambda x, y: (x + y) ).collect()
+total_durations = sum([duration[1] for duration in durations]) # this is ugly :(
+
+for x in sorted(durations, key=operator.itemgetter(1)):
     artist = x[0]
     duration = x[1]
-    m, s = divmod(duration, 60)
-    h, m = divmod(m, 60)
-    print "%s:  %dh:%02dm:%02ds" % (artist, h, m, s)
+    print(artist + ": " + display_time(duration, 3))
+
+print("Total duration " + display_time(total_durations))
