@@ -28,4 +28,5 @@ for x in sorted(durations, key=operator.itemgetter(1)):
     duration = x[1]
     print(artist + ": " + display_time(duration, 3))
 
-print("Total duration " + display_time(total_durations))
+print("Total duration: " + display_time(total_durations))
+print("Number of artists: %d" % len(durations))
